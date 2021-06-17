@@ -1,0 +1,170 @@
+/*
+Theme Name: Example Theme
+Theme URI: https://about.me/jeanmanzo
+Author: Jean Manzo
+Author URI: https://about.me/jeanmanzo
+Description: A brief example of How To Use Sass with a theme in Wordpress.
+Version: 1.0
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+ 
+@import "compass";
+@import "compass/reset";
+
+$helvetica: "Helvetica";
+$roboto: "Roboto";
+
+$blue: #007acc;
+$background-grey: #dedede;
+$full-width: 100%;
+$w50 : 50%;
+$w65 : 65%;
+$w75 : 75%;
+$w95 : 95%;
+$border-items : rgba(0,0,0, 0.5);
+$background-black: rgba(0,0,0,0.6);
+$white : #FFFFFF;
+$columns: 12;
+$font2: 2rem;
+$font12: 1.2rem;
+$text-justify: justify;
+$text-right: right !important;
+$font-w600: 600;
+$font-w700: 700;
+
+body{
+	font-family: $helvetica;
+}
+
+*{
+	box-sizing: border-box; 
+ }
+
+.container{
+  width: calc(100%- 10em);
+  max-width: $full-width;
+  margin: 0 auto;
+  background: $background-grey;
+ }
+
+.custom-posts-form .col-form{
+	background-color: $background-grey;
+}
+
+.custom-posts-form input[type="text"]{
+ 	width: $w95;
+ }
+
+.custom-posts-form select{
+	padding: 15px;
+ 	width: $w50;
+}
+
+#projects-content .title{
+ 	font-size: $font2;
+ 	padding: 5px 0; 
+ 	color: $blue;
+ 	font-weight: $font-w600;
+}
+
+.entry-content p{
+ 	padding: 10px 0;
+ 	marging: 10px 0;
+}
+
+ul.list-categories, ul.list-state{
+	
+	padding: 5px 0;
+	
+	li{
+		display: inline-block;
+		color: $white;
+		background: $background-black;
+		padding: 5px 10px;
+		border-radius: 10px;
+		margin: 5px 0;
+	}
+
+}
+
+ ul.list-state{	
+	
+	li{
+		background: rgba(255,0,0, 0.5);	
+	}
+
+}
+
+
+#projects-content .list-categories .list-category-title{
+	margin: 15px 0;
+	font-weight: $font-w700;
+}
+
+.btn-more{
+	margin: 10px 0;
+	text-transform: uppercase;
+	font-family: $roboto;
+}
+
+div[class^="col-"]{
+  background: $white;
+  border: $border-items;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  font-size : $font12;
+  text-align: $text-justify;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through $columns
+{
+  .col-#{$i}{
+    flex: 0 0 100% / $columns * $i;
+   }
+  .col-offset-#{$i}{
+    margin-left: 100% / $columns * $i;
+  }
+}
+
+.text-right{
+	text-align: $text-right;
+}
+
+.pagination{
+	padding: 15px 0;
+    text-align: $text-right;
+}
+
+.pagination a{
+	color: $white;
+    text-align: $text-right;
+    text-decoration: none;
+}
+
+@media all and (max-width: 699px) and (min-width: 320px) {
+     .custom-posts-form input[type="text"]{
+	 	width: $w65;
+	 }
+
+	.custom-posts-form select{
+	 	width: $w65;
+	}
+
+	@for $i from 1 through $columns
+	{
+	  .col-#{$i}{
+	    flex: 0 0 100%;
+	   }
+	  .col-offset-#{$i}{
+	    margin-left: 100%;
+	  }
+	}
+}

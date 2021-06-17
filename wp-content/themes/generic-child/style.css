@@ -1,0 +1,442 @@
+/*
+Theme Name: Example Theme
+Theme URI: https://about.me/jeanmanzo
+Author: Jean Manzo
+Author URI: https://about.me/jeanmanzo
+Description: A brief example of How To Use Sass with a theme in Wordpress.
+Version: 1.0
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* line 5, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Ruby27-x64/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 38, sass/style.scss */
+body {
+  font-family: "Helvetica";
+}
+
+/* line 42, sass/style.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 46, sass/style.scss */
+.container {
+  width: calc(100%- 10em);
+  max-width: 100%;
+  margin: 0 auto;
+  background: #dedede;
+}
+
+/* line 53, sass/style.scss */
+.custom-posts-form .col-form {
+  background-color: #dedede;
+}
+
+/* line 57, sass/style.scss */
+.custom-posts-form input[type="text"] {
+  width: 95%;
+}
+
+/* line 61, sass/style.scss */
+.custom-posts-form select {
+  padding: 15px;
+  width: 50%;
+}
+
+/* line 66, sass/style.scss */
+#projects-content .title {
+  font-size: 2rem;
+  padding: 5px 0;
+  color: #007acc;
+  font-weight: 600;
+}
+
+/* line 73, sass/style.scss */
+.entry-content p {
+  padding: 10px 0;
+  marging: 10px 0;
+}
+
+/* line 78, sass/style.scss */
+ul.list-categories, ul.list-state {
+  padding: 5px 0;
+}
+/* line 82, sass/style.scss */
+ul.list-categories li, ul.list-state li {
+  display: inline-block;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+/* line 95, sass/style.scss */
+ul.list-state li {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+/* line 102, sass/style.scss */
+#projects-content .list-categories .list-category-title {
+  margin: 15px 0;
+  font-weight: 700;
+}
+
+/* line 107, sass/style.scss */
+.btn-more {
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-family: "Roboto";
+}
+
+/* line 113, sass/style.scss */
+div[class^="col-"] {
+  background: #FFFFFF;
+  border: rgba(0, 0, 0, 0.5);
+  padding: 1rem 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+/* line 122, sass/style.scss */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 129, sass/style.scss */
+.col-1 {
+  flex: 0 0 8.33333%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-1 {
+  margin-left: 8.33333%;
+}
+
+/* line 129, sass/style.scss */
+.col-2 {
+  flex: 0 0 16.66667%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-2 {
+  margin-left: 16.66667%;
+}
+
+/* line 129, sass/style.scss */
+.col-3 {
+  flex: 0 0 25%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-3 {
+  margin-left: 25%;
+}
+
+/* line 129, sass/style.scss */
+.col-4 {
+  flex: 0 0 33.33333%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-4 {
+  margin-left: 33.33333%;
+}
+
+/* line 129, sass/style.scss */
+.col-5 {
+  flex: 0 0 41.66667%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-5 {
+  margin-left: 41.66667%;
+}
+
+/* line 129, sass/style.scss */
+.col-6 {
+  flex: 0 0 50%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-6 {
+  margin-left: 50%;
+}
+
+/* line 129, sass/style.scss */
+.col-7 {
+  flex: 0 0 58.33333%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-7 {
+  margin-left: 58.33333%;
+}
+
+/* line 129, sass/style.scss */
+.col-8 {
+  flex: 0 0 66.66667%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-8 {
+  margin-left: 66.66667%;
+}
+
+/* line 129, sass/style.scss */
+.col-9 {
+  flex: 0 0 75%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-9 {
+  margin-left: 75%;
+}
+
+/* line 129, sass/style.scss */
+.col-10 {
+  flex: 0 0 83.33333%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-10 {
+  margin-left: 83.33333%;
+}
+
+/* line 129, sass/style.scss */
+.col-11 {
+  flex: 0 0 91.66667%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-11 {
+  margin-left: 91.66667%;
+}
+
+/* line 129, sass/style.scss */
+.col-12 {
+  flex: 0 0 100%;
+}
+
+/* line 132, sass/style.scss */
+.col-offset-12 {
+  margin-left: 100%;
+}
+
+/* line 137, sass/style.scss */
+.text-right {
+  text-align: right !important;
+}
+
+/* line 141, sass/style.scss */
+.pagination {
+  padding: 15px 0;
+  text-align: right !important;
+}
+
+/* line 146, sass/style.scss */
+.pagination a {
+  color: #FFFFFF;
+  text-align: right !important;
+  text-decoration: none;
+}
+
+@media all and (max-width: 699px) and (min-width: 320px) {
+  /* line 153, sass/style.scss */
+  .custom-posts-form input[type="text"] {
+    width: 65%;
+  }
+
+  /* line 157, sass/style.scss */
+  .custom-posts-form select {
+    width: 65%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-1 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-1 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-2 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-2 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-3 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-3 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-4 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-4 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-5 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-5 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-6 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-6 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-7 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-7 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-8 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-8 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-9 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-9 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-10 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-10 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-11 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-11 {
+    margin-left: 100%;
+  }
+
+  /* line 163, sass/style.scss */
+  .col-12 {
+    flex: 0 0 100%;
+  }
+
+  /* line 166, sass/style.scss */
+  .col-offset-12 {
+    margin-left: 100%;
+  }
+}
