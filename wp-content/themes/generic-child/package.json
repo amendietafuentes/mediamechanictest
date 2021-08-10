@@ -1,0 +1,29 @@
+{
+  "name": "generic-child",
+  "version": "1.0.0",
+  "description": "Tema creado para instalación con WordPress",
+  "main": "index.js",
+  "scripts": {
+    "css": "node-sass --output-style compressed --include-path scss sass/style.scss style.css",
+    "watch": "nodemon -e scss -x \"npm run css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amendietafuentes/mediamechanictest.git"
+  },
+  "keywords": [
+    "sass",
+    "gulp",
+    "wordpress"
+  ],
+  "author": "Arnulfo Mendieta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amendietafuentes/mediamechanictest/issues"
+  },
+  "homepage": "https://github.com/amendietafuentes/mediamechanictest#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "node-sass": "^6.0.1"
+  }
+}
