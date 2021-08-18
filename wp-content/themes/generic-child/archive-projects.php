@@ -65,7 +65,7 @@
 					<?php echo "</ul>";?>
 				</div>
 
-				<button class="btn-more">Read more</button>
+				<a href="<?php echo get_permalink(); ?>" class="btn-more">Read more</a>
 
 			</div>
 		<?php endif;?>

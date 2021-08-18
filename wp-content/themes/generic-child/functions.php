@@ -18,6 +18,28 @@ function enqueue_styles_child_theme() {
 add_action( 'wp_enqueue_scripts', 'enqueue_styles_child_theme' );
 
 
+function enqueue_scripts_child_theme(){
+
+	$parent_script = 'generic-script';
+	$child_script  = 'generic-child-script';
+	
+	if(is_home()){
+
+	wp_register_script( $parent_script,
+		get_stylesheet_directory_uri() . '/js/script.js', array('jquery') , '1.0', true
+	);
+
+	wp_enqueue_script( $parent_script );
+	wp_localize_script( $parent_script, 'generic_script_object', array(  'ajaxurl' => admin_url( 'admin-ajax.php' ), 'data_var_1' => 'value 1', 'data_var_2' => 'value 2', ) );
+	
+	}
+
+
+}
+
+add_action( 'wp_enqueue_scripts', 'enqueue_scripts_child_theme' );
+
+
 if ( ! function_exists('projects') ) {
 
 // Register Custom Post Type
@@ -90,16 +112,6 @@ function projects() {
 add_action( 'init', 'projects', 0 );
 
 }
-
-
-function add_my_post_types_to_query( $query ) {
-	if ( (is_single() || is_home() || is_category() ) || is_archive() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'post', 'projects' ) );
-
-	return $query;
-}
-
-add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
 
 if ( ! function_exists( 'state_custom_taxonomy' ) ) {
 
