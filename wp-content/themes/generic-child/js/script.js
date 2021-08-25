@@ -36,6 +36,4 @@ jQuery(function($) {
         jQuery('.post-popup-wrap').fadeOut();
     });
 
-
-
 });

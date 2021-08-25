@@ -19,7 +19,9 @@ $roboto: "Roboto";
 
 $blue: #007acc;
 $background-grey: #dedede;
+$blank: #FFFFFF;
 $full-width: 100%;
+$w30 : 30%;
 $w50 : 50%;
 $w65 : 65%;
 $w75 : 75%;
@@ -108,6 +110,17 @@ ul.list-categories, ul.list-state{
 	margin: 10px 0;
 	text-transform: uppercase;
 	font-family: $roboto;
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-family: $roboto;
+    color: $blank;
+    background-color: $blue;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin-top: 10px;
+    display: block;
+    width: $w30;
+    border-radius: 5px;
 }
 
 div[class^="col-"]{
@@ -149,22 +162,233 @@ div[class^="col-"]{
     text-decoration: none;
 }
 
-@media all and (max-width: 699px) and (min-width: 320px) {
-     .custom-posts-form input[type="text"]{
-	 	width: $w65;
-	 }
+.post-popup-wrap{
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    color: #fff;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display: none;
+}
 
-	.custom-posts-form select{
-	 	width: $w65;
+.post-popup-inner-content{
+    width: 950px;
+    max-width: 65%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-bg-color{
+    background-color: #000000;
+    width: 950px;
+    height: 900px;
+    padding: 0 50px;
+}
+
+.post-popup-img-content #post-image{
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.message-overlay-content{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 0 25px;
+    padding: 0px 50px;
+    width: 100%;
+    text-align: center;
+    margin-top: 35%;
+    z-index: 1;
+}
+
+.message-overlay-content #post-title{
+    display: block;
+    color: #eee;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 35px;
+    line-height: 35px;
+    margin-top: 60px;
+}
+
+.message-overlay-content #post-content{
+    display: block;
+    color: #eee;
+    font-weight: 400;
+    text-align: justify;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+#close{
+    text-align: right;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+@media all and (max-width: 1024px) and (min-width: 768px){
+    .popup-bg-color {
+        width: 730px;
+    }
+
+    .message-overlay-content {
+        left: 5%;
+    }
+}
+
+@media all and (max-width: 768px) and (min-width: 699px){
+
+    .popup-bg-color {
+        background-color: #000000;
+        width: 635px;
+        height: 960px;
+        padding: 0 50px;
+    }
+
+    .message-overlay-content {
+        top: 50%;
+        width: 610px;
+    }
+
+    #close {
+        font-size: 15px;
+    }
+
+    .post-popup-inner-content {
+        left: 40%;
+    }
+
+
+}
+
+
+@media all and (max-width: 699px) and (min-width: 480px) {
+
+    .popup-bg-color {
+        background-color: #000000;
+        width: 635px;
+        height: 960px;
+        padding: 0 50px;
+    }
+
+    .message-overlay-content {
+        top: 50%;
+        width: 610px;
+    }
+
+    #close {
+        font-size: 15px;
+    }
+
+    .post-popup-inner-content {
+        left: 40%;
+    }
+
+	.custom-posts-form input[type="text"]{
+		width: $w65;
 	}
 
-	@for $i from 1 through $columns
-	{
-	  .col-#{$i}{
-	    flex: 0 0 100%;
-	   }
-	  .col-offset-#{$i}{
-	    margin-left: 100%;
+   .custom-posts-form select{
+		width: $w65;
+   }
+
+   @for $i from 1 through $columns
+   {
+	 .col-#{$i}{
+	   flex: 0 0 100%;
 	  }
+	 .col-offset-#{$i}{
+	   margin-left: 100%;
+	 }
+   }
+}
+
+@media all and (max-width: 480px) and (min-width: 320px) {
+
+    #projects-content .title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .popup-bg-color {
+        width: 355px;
+        padding: 0 30px;
+    }
+
+    .message-overlay-content #post-title {
+        font-size: 16px;
+        text-align: center;
+        width: 60%;
+        margin-top: 150px;
+    }
+
+    .message-overlay-content {
+        top: 30%;
+        width: 650px;
+        margin-top: 45%;
+    }
+
+    .popup-bg-color {
+        width: 425px;
+        height: 670px;
+        padding: 0 40px;
+    }
+
+    .message-overlay-content #post-content {
+        font-size: 10px;
+        line-height: 18px;
+    }
+
+    .message-overlay-content #post-content p {
+        width: 60%;
+    }
+
+    .post-popup-inner-content {
+        width: 98%;
+    }
+
+    #close {
+        font-size: 12px;
+        width: 60%;
+        text-align: right;
+        margin-top: 15px;
+    }
+
+    .post-popup-inner-content {
+        left: 40%;
+        max-width: 95%;
+    }
+
+	.custom-posts-form input[type="text"]{
+		width: $w65;
 	}
+
+   .custom-posts-form select{
+		width: $w65;
+   }
+
+   @for $i from 1 through $columns
+   {
+	 .col-#{$i}{
+	   flex: 0 0 100%;
+	  }
+	 .col-offset-#{$i}{
+	   margin-left: 100%;
+	 }
+   }
+
 }
