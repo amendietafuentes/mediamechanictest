@@ -30,7 +30,7 @@ function enqueue_scripts_child_theme(){
 	);
 
 	wp_enqueue_script( $parent_script );
-	wp_localize_script( $parent_script, 'generic_script_object', array(  'ajaxurl' => admin_url( 'admin-ajax.php' ), 'data_var_1' => 'value 1', 'data_var_2' => 'value 2', ) );
+	wp_localize_script( $parent_script, 'generic_script_object', array(  'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 	
 	}
 
@@ -159,6 +159,34 @@ function state_custom_taxonomy() {
 	register_taxonomy( 'state', array( 'projects' ), $args );
 
 }
+
 add_action( 'init', 'state_custom_taxonomy', 0 );
 
+// Hook para usuarios logueados
+add_action( "wp_ajax_generic_ajax_readmore" , "generic_get_post_content");
+
+// Hook para usuarios no logueados
+add_action( "wp_ajax_nopriv_generic_ajax_readmore" , "generic_get_post_content");
+
+function generic_get_post_content(){
+	$id_post = absint($_POST["id_post"]);
+	$title_post = get_post( $id_post )->post_title;
+	$content = apply_filters('the_content', get_post_field('post_content', $id_post));
+	$featured_img_url = get_the_post_thumbnail_url($id_post, 'full'); 
+	$content_post[] = array(
+		"title" => $title_post,
+		"content" => $content,
+		"feature_image" => $featured_img_url
+	);
+	echo json_encode($content_post);
+	die();
+}
+
+}
+
+// Hook para agregar contenido del post al popup
+add_action( 'wp_footer', 'post_content_popup' );
+
+function post_content_popup() {
+	get_template_part( 'template-parts/content-popup' );
 }

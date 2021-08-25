@@ -65,7 +65,7 @@
 					<?php echo "</ul>";?>
 				</div>
 
-				<a href="<?php echo get_permalink(); ?>" class="btn-more">Read more</a>
+				<a href="<?php echo the_permalink(); ?>" data-id="<?php the_ID(); ?>" class="btn-more">Read more</a>
 
 			</div>
 		<?php endif;?>
@@ -91,4 +91,5 @@
 	<?php endif;?>
 	</div>
 <?php get_sidebar();?>
+
 <?php get_footer(); ?>

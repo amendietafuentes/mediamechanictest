@@ -90,5 +90,7 @@
 		<button class="next-btn"><?php next_posts_link("Proyectos Siguientes &rarr;", 0 );?></button>
 	<?php endif;?>
 	</div>
+	
 <?php get_sidebar();?>
+
 <?php get_footer(); ?>
